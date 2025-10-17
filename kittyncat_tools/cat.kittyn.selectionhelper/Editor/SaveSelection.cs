@@ -1,0 +1,68 @@
+﻿using UnityEngine;
+using UnityEditor;
+using System.Linq;
+
+namespace Catte.SelectionHelper
+{
+    [System.Serializable]
+    public class SaveSelection : ScriptableObject
+    {
+        [SerializeReference]
+        public Object[] oldSelection;
+
+        public string[] s ={"Boi","Huh"};
+
+        [MenuItem("Tools/⚙️🎨 kittyn.cat 🐟/Selection Helper/Save Selection", false, 3120)]
+        static void SaveSelected()
+        {
+            instance.oldSelection = Selection.objects;
+            Save();
+        }
+
+        [MenuItem("Tools/⚙️🎨 kittyn.cat 🐟/Selection Helper/Load Selection", false, 3121)]
+        static void LoadSelected()
+        {
+            if (instance.oldSelection != null)
+                Selection.objects = Selection.objects.Concat(instance.oldSelection).ToArray();
+            
+        }
+
+        private static SaveSelection _instance;
+        private static SaveSelection instance => _instance ? _instance : GetInstance();
+
+        public static string folderPath = "DreadScripts/Saved Data/SaveSelection";
+        private static string SavePath => folderPath + "/SaveSelectionData.txt";
+
+        public static SaveSelection GetInstance()
+        {
+            if (_instance == null && Exists())
+            {
+                _instance = CreateInstance<SaveSelection>();
+                using (System.IO.StreamReader reader = new System.IO.StreamReader(SavePath))
+                    JsonUtility.FromJsonOverwrite(reader.ReadToEnd(),_instance);
+            }
+            if (_instance == null)
+            {
+                _instance = CreateInstance<SaveSelection>();
+                string directoryPath = System.IO.Path.GetDirectoryName(SavePath);
+                if (!System.IO.Directory.Exists(directoryPath))
+                    System.IO.Directory.CreateDirectory(directoryPath);
+                string json = JsonUtility.ToJson(_instance);
+                using (System.IO.StreamWriter writer = System.IO.File.CreateText(SavePath))
+                    writer.Write(json);
+            }
+            return _instance;
+        }
+
+        public static void Save()
+        {
+            string json = EditorJsonUtility.ToJson(_instance);
+            using (System.IO.StreamWriter writer = new System.IO.StreamWriter(SavePath))
+                writer.Write(json);
+        }
+        public static bool Exists()
+        {
+            return System.IO.File.Exists(SavePath);
+        }
+    }
+}
