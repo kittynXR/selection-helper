@@ -1,0 +1,37 @@
+{
+  "name": "cátte — Selection Helper VPM Repository",
+  "author": "kittyn",
+  "url": "https://selection-helper.kittyn.cat/index.json",
+  "id": "cat.kittyn.selectionhelper",
+  "packages": {
+    "com.dreadscripts.selectionhelper": {
+      "versions": {
+        "1.2.5": {
+          "name": "com.dreadscripts.selectionhelper",
+          "displayName": "DreadScripts - Selection Helper",
+          "version": "1.2.5",
+          "unity": "2019.4",
+          "description": "Unity Editor package to make selecting certain objects easier and less tedious",
+          "author": {
+            "name": "Dreadrith",
+            "email": "dreadscripts@gmail.com",
+            "url": "https://github.com/Dreadrith"
+          },
+          "license": "MIT",
+          "dependencies": {},
+          "vpmDependencies": {},
+          "keywords": [
+            "Dreadrith",
+            "DreadScripts",
+            "DreadTools",
+            "Editor",
+            "Utility",
+            "Selection"
+          ],
+          "url": "https://github.com/kittynXR/cat.kittyn.selectionhelper/releases/download/v1.2.5/cat.kittyn.selectionhelper-1.2.5.zip",
+          "samples": []
+        }
+      }
+    }
+  }
+}
