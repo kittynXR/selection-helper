@@ -60,6 +60,32 @@
           ],
           "url": "https://github.com/kittynXR/cat.kittyn.selectionhelper/releases/download/v1.2.5/cat.kittyn.selectionhelper-1.2.5.zip",
           "samples": []
+        },
+        "1.2.6": {
+          "name": "cat.kittyn.selectionhelper",
+          "displayName": "cátte — Selection Helper",
+          "version": "1.2.6",
+          "unity": "2019.4",
+          "description": "Unity Editor package to make selecting certain objects easier and less tedious",
+          "author": {
+            "name": "kittyn",
+            "email": "cat@kittyn.cat",
+            "url": "https://kittyn.cat"
+          },
+          "license": "MIT",
+          "dependencies": {},
+          "vpmDependencies": {},
+          "keywords": [
+            "kittyn",
+            "catte",
+            "unity",
+            "editor",
+            "utility",
+            "selection",
+            "tool"
+          ],
+          "url": "https://github.com/kittynXR/cat.kittyn.selectionhelper/releases/download/v1.2.6/cat.kittyn.selectionhelper-1.2.6.zip",
+          "samples": []
         }
       }
     }
