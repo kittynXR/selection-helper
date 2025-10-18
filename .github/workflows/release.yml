@@ -6,7 +6,7 @@ on:
     branches: [ "main" ]
     paths: [ "kittyncat_tools/cat.kittyn.selectionhelper/package.json" ]
   release:
-    types: [ published, created, edited, unpublished, deleted, released ]
+    types: [ published, created, released ]
 
 env:
   packageName: "cat.kittyn.selectionhelper"
