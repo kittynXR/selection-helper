@@ -30,7 +30,7 @@ namespace Catte.SelectionHelper
         private static SaveSelection _instance;
         private static SaveSelection instance => _instance ? _instance : GetInstance();
 
-        public static string folderPath = "DreadScripts/Saved Data/SaveSelection";
+        public static string folderPath = "Catte/Saved Data/SaveSelection";
         private static string SavePath => folderPath + "/SaveSelectionData.txt";
 
         public static SaveSelection GetInstance()
